@@ -1,0 +1,19 @@
+.red {      
+    width: 200px;
+    height: 200px;
+    -moz-border-radius: 50%; 
+    -webkit-border-radius: 50%; 
+    border-radius: 50%;
+    background: #FFFFFF;    
+    border: 2px solid #2E64FE;    
+  }
+  .breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color:#EFF8FB;
+    -webkit-text-fill-color: #1C1C1C;
+  }
+
+
+ 
+
