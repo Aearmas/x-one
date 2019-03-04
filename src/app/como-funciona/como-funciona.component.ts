@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-como-funciona',
   templateUrl: './como-funciona.component.html',
   styleUrls: ['./como-funciona.component.css']
+  
 })
 export class ComoFuncionaComponent implements OnInit {
 

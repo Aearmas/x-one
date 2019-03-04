@@ -22,6 +22,7 @@ import { AyudaComponent } from './ayuda/ayuda.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { PasosComponent } from './pasos/pasos.component';
+import { MatStepperModule, MatIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,8 @@ import { PasosComponent } from './pasos/pasos.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
+    MatStepperModule,
+    MatIconModule,
     AlertModule.forRoot(),
 
   ],

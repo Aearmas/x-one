@@ -48,6 +48,18 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
-  }
- 
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aearmas/Fintech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aearmas/Fintech/issues"
+  },
+  "homepage": "https://github.com/Aearmas/Fintech#readme"
 }
