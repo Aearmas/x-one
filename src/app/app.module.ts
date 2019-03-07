@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+///importando operaciones 
+import { FormsModule } from '@angular/forms';
 
 //animation
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -47,6 +49,7 @@ import { MatStepperModule, MatIconModule } from '@angular/material';
     MyOwnCustomMaterialModule,
     MatStepperModule,
     MatIconModule,
+    FormsModule,
     AlertModule.forRoot(),
 
   ],

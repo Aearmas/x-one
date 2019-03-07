@@ -37,29 +37,29 @@
                                 <div class="col-md-4 text-center">
                                     <h5>¿Cuánto quieres?</h5>
                                     <div class="calculator">
-                                        <a title="Disminuir monto" href="#" id="minus_cuanto_quieres"><i class="fas fa-minus-circle fa-2x"></i></a>
-                                        <input readonly="" type="text" name="cuanto_quieres" id="cuanto_quieres" class="large"
-                                               value="">
-                                        <a title="Aumentar monto" href="#" id="plus_cuanto_quieres"><i class="fas fa-plus-circle fa-2x"></i></a>
+                                        <a title="Disminuir monto"  id="minus_cuanto_quieres" (click)="Disminuir_monto()"><i class="fas fa-minus-circle fa-2x"></i></a>
+                                        <input readonly="" type="number" name="cuanto_quieres" id="incrementar" [(ngModel)]="incrementar" class="large"
+                                               value="" required>
+                                        <a title="Aumentar monto"  id="plus_cuanto_quieres" (click)="Incrementar_monto()"><i class="fas fa-plus-circle fa-2x"></i></a>
                                     </div>
                                 </div>
         
                                 <div class="col-md-4 text-center">
                                     <h5 >¿Cuántas cuotas?</h5>
                                     <div class="calculator">
-                                        <a title="Disminuir una cuota" href="#" id="minus_como_pagas"><i class="fas fa-minus-circle fa-2x"></i></a>
-                                        <input readonly="" class="" name="nro_cuotas_sol" id="como_pagas" type="text"
+                                        <a title="Disminuir una cuota"  id="minus_como_pagas" (click)="Disminuir_cuotas()"><i class="fas fa-minus-circle fa-2x"></i></a>
+                                        <input readonly="" class="" name="nro_cuotas_sol" id="como_pagas"  [(ngModel)]="como_pagas" type="text"
                                                value=""/>
-                                        <a title="Aumentar una cuota" href="#" id="plus_como_pagas"><i class="fas fa-plus-circle fa-2x"></i></a>
+                                        <a title="Aumentar una cuota"  id="plus_como_pagas" (click)="Incrementar_cuotas()"><i class="fas fa-plus-circle fa-2x"></i></a>
                                     </div>
                                 </div>
         
                                 <div class="col-md-2 text-center">
                                     <div class="inner">
                                         <h3 id="texto_cuotas" class="h6 cuotas t-cuota">Cuota mensual</h3>
-                                        <p>
-                                            <span class="monto">S/ </span><span class="monto cuota_monto"></span>
-                                        </p>
+                                        <h2><b>S/. {{monto_pagar}} </b></h2>
+                                        <p class="valor">*Valor referencial</p>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-md-2 text-center ">
