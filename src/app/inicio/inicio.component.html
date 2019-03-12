@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
@@ -32,25 +33,29 @@
                 <div class="container">
                     <div class="calculos-top">
                         <form class="modificar-credito modificar-datos " method="POST" action="#" >
-                            <input type="hidden" name="_token" value="baD9Z6W4lX9oS3e1kOawUKiWjZplebdXEmCSs9Fx">
+                            <input type="hidden" name="_token" value="">
                             <div class="row">
                                 <div class="col-md-4 text-center">
                                     <h5>¿Cuánto quieres?</h5>
                                     <div class="calculator">
-                                        <a title="Disminuir monto"  id="minus_cuanto_quieres" (click)="Disminuir_monto()"><i class="fas fa-minus-circle fa-2x"></i></a>
+                                        <a title="Disminuir monto"  id="minus_cuanto_quieres" (click)="Disminuir_monto()"><span  style="font-size: 18px; color: #2E64FE;">
+                                            <i class="fas fa-minus-circle fa-2x"></i></span></a>
                                         <input readonly="" type="number" name="cuanto_quieres" id="incrementar" [(ngModel)]="incrementar" class="large"
                                                value="" required>
-                                        <a title="Aumentar monto"  id="plus_cuanto_quieres" (click)="Incrementar_monto()"><i class="fas fa-plus-circle fa-2x"></i></a>
+                                        <a title="Aumentar monto"  id="plus_cuanto_quieres" (click)="Incrementar_monto()"><span style="font-size: 18px; color: #2E64FE;">
+                                            <i class="fas fa-plus-circle fa-2x"></i></span></a>
                                     </div>
                                 </div>
         
                                 <div class="col-md-4 text-center">
                                     <h5 >¿Cuántas cuotas?</h5>
                                     <div class="calculator">
-                                        <a title="Disminuir una cuota"  id="minus_como_pagas" (click)="Disminuir_cuotas()"><i class="fas fa-minus-circle fa-2x"></i></a>
+                                        <a title="Disminuir una cuota"  id="minus_como_pagas" (click)="Disminuir_cuotas()"> <span style="font-size: 18px; color: #2E64FE;">
+                                            <i class="fas fa-minus-circle fa-2x"></i></span></a>
                                         <input readonly="" class="" name="nro_cuotas_sol" id="como_pagas"  [(ngModel)]="como_pagas" type="text"
                                                value=""/>
-                                        <a title="Aumentar una cuota"  id="plus_como_pagas" (click)="Incrementar_cuotas()"><i class="fas fa-plus-circle fa-2x"></i></a>
+                                        <a title="Aumentar una cuota"  id="plus_como_pagas" (click)="Incrementar_cuotas()"><span style="font-size: 18px; color: #2E64FE;">
+                                            <i class="fas fa-plus-circle fa-2x"></i></span></a>
                                     </div>
                                 </div>
         
@@ -63,7 +68,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2 text-center ">
-                                    <a class="btn btn-primary btn-lg  font-weight-bold color" href="solicitud/pasos"><span>¡Lo Quiero!</span></a>
+                                    <a class="btn btn-primary btn-lg  font-weight-bold color"  [routerLink]="['solicitud/pasos']"><span>¡Lo Quiero!</span></a>
+                                   
                                 </div>
                             </div>
                         </form>
@@ -71,10 +77,9 @@
                     <br>
                    <br> 
                     <div class="datos-calculos">
-                        <p class="ast">Préstamo S/ <span id="resPrestamos"></span> <strong>+</strong> Intereses y Comisiones S/
-                            <span id="resInteres"></span> <strong>=</strong> Total a pagar S/ <span id="resTotal"></span><br>
+                        <p class="ast"><br>
                             <strong>* Tasa Efectiva Mensual: </strong> <strong class="tem_int_com"></strong><strong>%</strong>.
-                            TCEA de <span class="valor tcea_sin_igv"></span>%+IGV y primer vencimiento
+                            TCEA de <span class="valor tcea_sin_igv"></span>% y primer vencimiento
                             el 17/03/2019 (lo podrás modificar más adelante).
                             Desembolso en 1 hora durante <strong>horario de oficina.</strong></p>
                     </div>

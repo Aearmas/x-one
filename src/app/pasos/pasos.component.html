@@ -7,163 +7,124 @@
   <title>Pasos</title>
 </head>
 <body>
-  
-  
-    <div class="miga padding-top_35">
-        <div class="container">
-            <ol class="breadcrumb">
-                <section class="datos-personales">
-                    <div class="container">
-                        <form class="relative" id="datos_personales" name="datos_personales" method="post" autocomplete="off"
-                              enctyp="multipart/form-data">
+        <div class="miga padding-top_35">
+                <div class="container">
+                    <ol class=" mb-5">
+                        <mat-horizontal-stepper>
+                            <mat-step label="Paso 1: Datos Personales">
+                                <div class="container">
+                                    <form class="relative form-group" id="" name="" method="post">
+                                       <font color="blue"><h1 class="title-page">Datos Personales</h1></font>
+                                    </form>
+                                </div>                     
+                               <br>                  
                            
-                            <div class="cnt-form-datos clearfix">
-                                <div class="clearfix">
-                                    <legend class="color_2">
-                                        Datos Personales
-                                    </legend>
-                                </div>
-                                <input type="hidden" name="_token" value="jl4ObTdMSKiEZ54lX8hqa0UEUrqhPLrw6JFM2Pf1">
-                                <input type="hidden" value="" name="coordenada" id="coordenada">
-                                <fieldset>
-                                    <div id="bloque-1">
-                                        <div class="row">
-                                            <input type="hidden" name="documento_tipo" value="1">
-                                            <div class="col-xs-12 col-md-2 form-group">
-                                                <label for="documento_nro">DNI</label>
-                                            </div>
-                                            <div class="col-xs-12 col-md-8 ">
-                                                <div class="row">
-                                                    <div class="col-md-5 form-group">
-                                                        <input autocomplete="off" type="text" class="normal form-control"
-                                                               notpaste="" name="documento_nro" id="documento_nro"
-                                                               value=""
-                                                               tabindex="20">
-                                                    </div>
-              
-                                                    <div class="col-md-3 xs-text-center form-group">
-                                                        <a title="Iniciar sesión" class="btn btn-cuenta"
-                                                           href="#"><span>Ya soy cliente</span></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xs-12 col-md-2 form-group">
-                                                <label for="per_apellido_pat">Apellidos</label>
-                                            </div>
-                                            <div class="col-xs-12 col-md-8 ">
-                                                <div class="row">
-                                                    <div class="col-md-5 form-group">
-                                                        <input autocomplete="off" tabindex="30" value=""
-                                                               type="text" name="per_apellido_pat" id="per_apellido_pat"
-                                                               class="form-control uppercase" placeholder="Paterno">
-                                                    </div>
-                                                    <div class="col-md-5 form-group">
-                                                        <input autocomplete="off" tabindex="40" value=""
-                                                               type="text" name="per_apellido_mat" id="ap_materno"
-                                                               class="form-control uppercase" placeholder="Materno">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 col-xs-12">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-md-4 form-group">
-                                                        <label for="nombres">Nombres</label>
-                                                    </div>
-                                                    <div class="col-xs-12 col-md-8 form-group">
-                                                        <div class="row">
-                                                            <div class="col-md-10">
-                                                                <input autocomplete="off" tabindex="50" type="text" name="nombres"
-                                                                       id="nombres" class="form-control uppercase"
-                                                                       value="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-              
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-md-4 form-group">
-                                                        <label for="celular">Celular Personal</label>
-                                                    </div>
-                                                    <div class="col-xs-12 col-md-8">
-                                                        <div class="row">
-                                                            <div class="col-md-6 form-group">
-                                                                <input autocomplete="off" tabindex="60" type="text"
-                                                                       name="telefono_movil" id="celular" class="form-control"
-                                                                       value="">
-                                                            </div>
-                                                            <div class="col-md-4 form-group">
-                                                                <select tabindex="100" name="oper_id" id="oper_id"
-                                                                        class="form-control">
-                                                                    <option value="" selected="true" disabled="true">Operador
-                                                                    </option>
-                                                                                                                                <option value="1" >MOVISTAR</option>
-                                                                                                                                <option value="2" >CLARO</option>
-                                                                                                                                <option value="3" >ENTEL</option>
-                                                                                                                                <option value="4" >BITEL</option>
-                                                                                                                        </select>
-                                                            </div>
-                                                            <div class="col-md-2 form-group">
-                                                                <span class="color_2 btn btn-link btn-sm no-click"
-                                                                      data-toggle="tooltip" data-placement="bottom" title=""
-                                                                      data-original-title="Autorizarás tu préstamo con un código enviado a este teléfono"><i
-                                                                            class="icon-interrogaccion-circulo"></i></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-md-4 form-group">
-                                                        <label for="linea_titular">¿Eres titular de la línea?</label>
-                                                    </div>
-                                                    <div class="col-xs-12 col-md-8">
-                                                        <div class="form-group form-radio">
-                                                            <label class="radio-inline">
-                                                                <input tabindex="66" type="radio" name="linea_titular" id=""
-                                                                       value="1"> Si
-                                                            </label>
-                                                            <label class="radio-inline">
-                                                                <input tabindex="67" type="radio" name="linea_titular" id=""
-                                                                       value=""> No
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row ">
-                                                    <div class="col-xs-12 col-md-4 form-group">
-                                                        <label for="correo">Correo Electrónico</label>
-                                                    </div>
-                                                    <div class="col-xs-12 col-md-8 ">
-                                                        <div class="row">
-                                                            <div class="col-md-10 form-group">
-                                                                <input autocomplete="off" tabindex="70" type="text" name="email"
-                                                                       id="correo" class="form-control form-inline uppercase"
-                                                                       value="">
-                                                            </div>
-                                                            <div class="col-md-2 form-group">
-                                                                <span class="color_2 btn btn-link btn-sm no-click"
-                                                                      data-toggle="tooltip" data-placement="bottom" title=""
-                                                                      data-original-title="Correo electrónico personal. Acá enviaremos tu contrato electrónico, comprobantes de pago y comunicaciones relevantes"><i
-                                                                            class="icon-interrogaccion-circulo"></i></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
-                                                                                </fieldset>
-                            </div>
-                        </form>
-                    </div>
-                </section>
-            </ol>
+                            </mat-step>
+                            <mat-step label="Paso 2: Aprobación">
+                                <div class="container">
+                                    <form class="relative form-group" id="" name="" method="post">
+                                       <font color="blue"><h1 class="title-page">Aprobación</h1></font>
+                                    </form>
+                                </div> 
+                            </mat-step>
+                            <mat-step label="Paso 3: Desembolso y Firma">
+                                <div class="container">
+                                    <form class="relative form-group" id="" name="" method="post">
+                                       <font color="blue"><h1 class="title-page">Desembolso y Firma</h1></font>
+                                    </form>
+                                </div> 
+                              </mat-step>
+                          </mat-horizontal-stepper>                         
+                            
+                    </ol>
+                </div>
         </div>
-    </div>
-   
+       
+
+        <div>
+                               <p>
+                                 <mat-form-field appearance="outline" >
+                                     <mat-label>Nombres:</mat-label>
+                                     <input matInput placeholder="Ingrese Su Nombre" type="text" [(ngModel)]="usuario.nombre" >
+                                     <mat-hint><b>Nombres Completos</b> </mat-hint>
+                                   </mat-form-field>
+                                 </p>
+                                 <p>
+                                     <mat-form-field appearance="outline" >
+                                         <mat-label>Telefono:</mat-label>
+                                         <input matInput placeholder="Ingrese Su Número de Telefono" type="tel" [(ngModel)]="usuario.telefono">
+                                         <mat-hint><b>úmero de Telefono</b></mat-hint>
+                                       </mat-form-field>
+                                     </p>
+                                     <p>
+                                         <mat-form-field appearance="outline" >
+                                             <mat-label>Email:</mat-label>
+                                             <input matInput placeholder="Ingrese Su Email"  type="text" [(ngModel)]="usuario.email">
+                                             <mat-hint><b>Número de Telefono</b></mat-hint>
+                                           </mat-form-field>
+                                         </p>
+                                         <button mat-button (click)="openDialog()">Open dialog</button>
+                                         
+                                         <form name="form1" method="post" action="mipagina.htm"> 
+                 
+                                             <p> 
+                                                 <button  class="btn btn-primary" style="margin: 10px"  (click)="altaUsuario()"> AGREGAR </button> 
+                                                 
+                                                 <button class="btn btn-primary"  (click)="editarUsuario()"> MODIFICAR </button> 
+                                             </p>                                       
+                                           </form>
+                           </div>
+                           <div>
+                              <p> Nombre: <input type="text" [(ngModel)]="usuario.nombre" /> </p>
+                              <p> Ap. Paterno: <input type="text" [(ngModel)]="usuario.apellido_paterno" /> </p>
+                              <p> Ap. materno: <input type="text" [(ngModel)]="usuario.apellido_materno" /> </p>
+                              <p> celular: <input type="text" [(ngModel)]="usuario.celular" /> </p>
+                              <p> DNI: <input type="text" [(ngModel)]="usuario.dni" /> </p>
+                              <p> Email: <input type="text" [(ngModel)]="usuario.email" /> </p>
+                              <p> Direccion: <input type="text" [(ngModel)]="usuario.direccion" /> </p>
+                              <p> clave: <input type="number" [(ngModel)]="usuario.clave" /> </p>
+                              <p> 
+                                <button (click)="altaUsuario()"> AGREGAR </button> 
+                                <button (click)="editarUsuario()"> MODIFICAR </button> 
+                              </p>
+                            </div>
+                          
+  
+                    <div align="center">
+                            <h1>LISTA DE USUARIOS REGISTRADOS</h1>
+                            <table border="1" *ngIf="hayRegistros(); else sin">
+                              <tr>
+                                <td>ID</td>
+                                <td>NOMBRE</td>
+                                <td>APELLIDO PATERNO</td>
+                                <td>APELLIDO MATERNO</td>
+                                <td>TELEFONO</td>
+                                <td>DNI</td>
+                                <td>EMAIL</td>
+                                <td>DIRECCIÓN</td>
+                                <td>CLAVE</td>
+                                <td>BORRAR</td>
+                                <td>SELECCIONAR</td>
+                              </tr>
+                              <tr *ngFor="let usuario of usuarios">
+                                <td> {{usuario.idUsuario }} </td>
+                                <td> {{usuario.nombre }} </td>
+                                <td> {{usuario.apellido_paterno }} </td>
+                                <td> {{usuario.apellido_materno }} </td>
+                                <td> {{usuario.celular }} </td>
+                                <td> {{usuario.dni }} </td>
+                                <td> {{usuario.email }} </td>
+                                <td> {{usuario.direccion }} </td>
+                                <td> {{usuario.clave }} </td>
+                                <td> <button   class="btn btn-danger" (click)="bajaUsuario(usuario.idUsuario)"> Borrar </button> </td>
+                                <td> <button   class="btn btn-primary" (click)="seleccionarUsuario(usuario.idUsuario)"> Seleccionar </button> </td>
+                              </tr>
+                            </table>
+                             <br>
+                            <ng-template #sin>
+                              <p>No hay usuarios registrados.</p>
+                            </ng-template>
+                    </div>
+                   
 </body>
 </html>

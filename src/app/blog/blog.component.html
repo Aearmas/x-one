@@ -10,58 +10,56 @@
     <div class="miga padding-top_35">
         <div class="container">
             <ol class="breadcrumb mb-5" >
-                <section class="cnt-form-datos como-funciona">
-                    <div class="bg__light bg-calculos">
-                        <div class="container">
-                            <div class="calculos-top">
-                                <form class="modificar-credito modificar-datos " method="POST" action="#" >
-                                    <input type="hidden" name="_token" value="baD9Z6W4lX9oS3e1kOawUKiWjZplebdXEmCSs9Fx">
-                                    <div class="row">
-                                        <div class="col-md-4 text-center">
-                                            <h5 class="h6 text-light solicitado t-solici">¿Cuánto quieres?</h5>
-                                            <div class="calculator">
-                                                <a title="Disminuir monto" href="#" id="minus_cuanto_quieres"><i class="fas fa-minus-circle fa-1x"></i></a>
-                                                <input readonly="" type="text" name="cuanto_quieres" id="cuanto_quieres" class="large"
-                                                       value="">
-                                                <a title="Aumentar monto" href="#" id="plus_cuanto_quieres"><i class="fas fa-plus-circle fa-1x"></i></a>
+                    <section class="cnt-form-datos como-funciona">
+                            <div class="bg__light bg-calculos">
+                                <div class="container">
+                                    <div class="calculos-top">
+                                        <form class="modificar-credito modificar-datos " method="POST" action="#" >
+                                            <input type="hidden" name="_token" value="#">
+                                            <div class="row">
+                                                <div class="col-md-4 text-center">
+                                                    <h4 class="h6 cuotas t-cuota">¿Cuánto quieres?</h4>
+                                                    <div class="calculator">
+                                                        <a title="Disminuir monto"  id="minus_cuanto_quieres" (click)="Disminuir_monto()" ><span  style=" color: #2E64FE;"><i class="fas fa-minus-circle fa-1x"></i></span></a>
+                                                        <input readonly="" type="text" name="cuanto_quieres" id="cuanto_quieres" class="large"  [(ngModel)]="incrementar"
+                                                               value="">
+                                                        <a title="Aumentar monto" id="plus_cuanto_quieres" (click)="Incrementar_monto()" ><span  style="color: #2E64FE;"><i class="fas fa-plus-circle fa-1x"></i></span></a>
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="col-md-4 text-center">
+                                                    <h4 class="h6 cuotas t-cuota">¿Cuántas cuotas?</h4>
+                                                    <div class="calculator">
+                                                        <a title="Disminuir una cuota"  id="minus_como_pagas" (click)="Disminuir_cuotas()" ><samp  style="color: #2E64FE;"><i class="fas fa-minus-circle fa-1x"></i></samp></a>
+                                                        <input readonly="" class="large" name="nro_cuotas_sol" id="como_pagas" type="text" [(ngModel)]="como_pagas"
+                                                               value=""/>
+                                                        <a title="Aumentar una cuota"  id="plus_como_pagas" (click)="Incrementar_cuotas()"><span  style="color: #2E64FE;"><i class="fas fa-plus-circle fa-1x"></i></span></a>
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="col-md-2 text-center">
+                                                    <div class="inner">
+                                                            <h3 id="texto_cuotas" class="h6 cuotas t-cuota">Cuota mensual</h3>
+                                                            <h5><b>S/. {{monto_pagar}} </b></h5>
+                                                            <p class="valor">*Valor referencial</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 text-center ">
+                                                  <button  type="submit" class="btn btn-primary btn-lg  font-weight-bold colo"><span>¡Lo Quiero!</span></button>
+                                                </div>
                                             </div>
-                                        </div>
-                
-                                        <div class="col-md-4 text-center">
-                                            <h5 class="h6 text-light solicitado t-intere">¿Cuántas cuotas?</h5>
-                                            <div class="calculator">
-                                                <a title="Disminuir una cuota" href="#" id="minus_como_pagas"><i class="fas fa-minus-circle fa-1x"></i></a>
-                                                <input readonly="" class="large" name="nro_cuotas_sol" id="como_pagas" type="text"
-                                                       value=""/>
-                                                <a title="Aumentar una cuota" href="#" id="plus_como_pagas"><i class="fas fa-plus-circle fa-1x"></i></a>
-                                            </div>
-                                        </div>
-                
-                                        <div class="col-md-2 text-center">
-                                            <div class="inner">
-                                                <h3 id="texto_cuotas" class="h6 cuotas t-cuota">Cuota mensual</h3>
-                                                <p>
-                                                    <span class="monto">S/ </span><span class="monto cuota_monto"></span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 text-center ">
-                                          <button  type="submit" class="btn btn-primary btn-lg  font-weight-bold colo"><span>¡Lo Quiero!</span></button>
-                                        </div>
+                                        </form>
                                     </div>
-                                </form>
+                                    <div class="datos-calculos">
+                                            <p class="ast"><br>
+                                                <strong>* Tasa Efectiva Mensual: </strong> <strong class="tem_int_com"></strong><strong>%</strong>.
+                                                TCEA de <span class="valor tcea_sin_igv"></span>% y primer vencimiento
+                                                el 17/03/2019 (lo podrás modificar más adelante).
+                                                Desembolso en 1 hora durante <strong>horario de oficina.</strong></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="datos-calculos">
-                                <p class="ast">Préstamo S/ <span id="resPrestamos"></span> <strong>+</strong> Intereses y Comisiones S/
-                                    <span id="resInteres"></span> <strong>=</strong> Total a pagar S/ <span id="resTotal"></span><br>
-                                    <strong>* Tasa Efectiva Mensual: </strong> <strong class="tem_int_com"></strong><strong>%</strong>.
-                                    TCEA de <span class="valor tcea_sin_igv"></span>%+IGV y primer vencimiento
-                                    el 17/03/2019 (lo podrás modificar más adelante).
-                                    Desembolso en 1 hora durante <strong>horario de oficina.</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                        </section>
             </ol>
         </div>
     </div>

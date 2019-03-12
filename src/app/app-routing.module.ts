@@ -12,6 +12,7 @@ import {NosotrosComponent} from './nosotros/nosotros.component';
 import {PasosComponent} from './pasos/pasos.component';
 
 
+
 const routes: Routes = [
   {path: 'contacto', component:ContactoComponent},
   {path: 'inicio', component:InicioComponent},
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path: 'como-funciona', component:ComoFuncionaComponent},
   {path: 'login', component:LoginComponent},
   {path: 'nosotros', component:NosotrosComponent},
-  {path:  'solicitud/pasos', component:PasosComponent},
+  {path: 'inicio/solicitud/pasos', component:PasosComponent},
 ];
 
 @NgModule({

@@ -1,16 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 ///importando operaciones 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //animation
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MyOwnCustomMaterialModule } from "./Material";
 
- 
+import { HttpClientModule } from '@angular/common/http';
 
+import { UsuariosService } from './usuarios.service';
 
-
+//////rutas de ventanas
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlertModule } from 'ngx-bootstrap';
@@ -24,7 +25,10 @@ import { AyudaComponent } from './ayuda/ayuda.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { PasosComponent } from './pasos/pasos.component';
+import {PasosComponentDoc} from './pasos/pasos.component';
+
 import { MatStepperModule, MatIconModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +43,8 @@ import { MatStepperModule, MatIconModule } from '@angular/material';
     LoginComponent,
     FooterComponent,
     PasosComponent,
+    PasosComponentDoc,
+    
     
     
   ],
@@ -50,10 +56,15 @@ import { MatStepperModule, MatIconModule } from '@angular/material';
     MatStepperModule,
     MatIconModule,
     FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AlertModule.forRoot(),
 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    UsuariosService
+  ],
+  bootstrap: [AppComponent],
+  entryComponents:[PasosComponentDoc],
 })
 export class AppModule { }
