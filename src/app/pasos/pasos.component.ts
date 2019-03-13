@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
 
+//////gestion de pasos de prestamo
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 
+const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const phoneValidator= /^[0-9]{1,7}$/;
 //// add base de datos 
 import { UsuariosService } from '../usuarios.service';
 
@@ -14,6 +18,43 @@ import { UsuariosService } from '../usuarios.service';
 })
 
 export class PasosComponent implements OnInit {
+  hide = true;
+
+
+  ///validaciones de registro
+   ///validar celular
+   celularFormControl = new FormControl('', [
+    Validators.required]);
+  //validar correo
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern(EMAIL_REGEX)]);
+    /////validando ndi
+    dniFormControl =new FormControl('', [
+      Validators.required]);
+  ///validar password
+  passwordGroup = new FormGroup({
+    password: new FormControl('', []),
+    confirm_password: new FormControl('', [])
+  });
+  ///validar direccion
+  direccionFormControl = new FormControl('', [
+    Validators.required]);
+
+    ///////////validando nombres
+    nombreFormControl= new FormControl('', [
+      Validators.required]);
+
+    ap_paternoFormControl= new FormControl('', [
+    Validators.required]);
+
+    ap_maternoFormControl= new FormControl('', [
+    Validators.required]);
+
+  ////gestionando pasos 
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
 
 
   
@@ -32,7 +73,7 @@ export class PasosComponent implements OnInit {
     clave: null  
   }
 
-  constructor(private usuariosServicio: UsuariosService, public dialog: MatDialog ) { }
+  constructor(private usuariosServicio: UsuariosService, public dialog: MatDialog,private _formBuilder: FormBuilder ) { }
   openDialog() {
       const dialogRef = this.dialog.open(PasosComponentDoc);
 
@@ -44,9 +85,16 @@ export class PasosComponent implements OnInit {
   ngOnInit() {
     this.obtenerUsuarios();
     ////gestion de  prestamos 
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
     
   }
-
+   
+ 
   obtenerUsuarios() {
     this.usuariosServicio.obtenerUsuarios().subscribe(
       result => this.usuarios = result

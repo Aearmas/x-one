@@ -7,63 +7,135 @@
   <title>Pasos</title>
 </head>
 <body>
+    <input type="checkbox" id="cerrar">
+		<label for="cerrar" id="btn-cerrar">X</label>
+		<div class="modal">
+			<div class="contenido">
+				<h2>Visita nuestro blog</h2>
+				<img src="http://lorempixel.com/200/200" alt="">
+			</div>
+		</div>
         <div class="miga padding-top_35">
                 <div class="container">
-                    <ol class=" mb-5">
-                        <mat-horizontal-stepper>
-                            <mat-step label="Paso 1: Datos Personales">
-                                <div class="container">
-                                    <form class="relative form-group" id="" name="" method="post">
-                                       <font color="blue"><h1 class="title-page">Datos Personales</h1></font>
-                                    </form>
-                                </div>                     
-                               <br>                  
+                    <ol class=" mb-5">                        
+                          <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                            <mat-step [stepControl]="firstFormGroup">
+                              <form [formGroup]="firstFormGroup">
+                                <ng-template matStepLabel>Paso 1: Datos Personales</ng-template>
+                                <form class="example-form">
+                                  <!--REGISTRO DE USUARIOS-->
+                                  <H4><b style="color:#0040FF">DATOS PERSONALES</b></H4>
+                                  <hr size="10px" color="#0040FF" />
+                                    <table class="example-full-width" width= "85%" cellspacing="10" cellpadding="10">
+                                        <tr>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Nombre" [(ngModel)]="usuario.nombre" [formControl]="nombreFormControl">
+                                                   <mat-error *ngIf="nombreFormControl.hasError('required')">
+                                                      Nombre es <strong>necesario</strong>
+                                                    </mat-error>
+                                                  </mat-form-field>
+                                            </td>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Apellido Paterno" [(ngModel)]="usuario.apellido_paterno" [formControl]="ap_paternoFormControl">
+                                                   <mat-error *ngIf="ap_paternoFormControl.hasError('required')">
+                                                      Apellido Paterno es <strong>necesario</strong>
+                                                    </mat-error>
+                                                  </mat-form-field>
+                                            </td>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Apellido Materno" [(ngModel)]="usuario.apellido_materno" [formControl]="ap_maternoFormControl">
+                                                   <mat-error *ngIf="ap_maternoFormControl.hasError('required')">
+                                                      Apellido materno es <strong>necesario</strong>
+                                                    </mat-error>
+                                                  </mat-form-field>
+                                            </td>
+                                         </tr>
+                                   </table>
+                                    <table class="example-full-width" width= "85%" cellspacing="10" cellpadding="10">
+                                        <tr>
+                                          <td>
+                                              <mat-form-field class="example-full-width"  hintLabel="Max 9 caracteres">
+                                                  <input matInput #celular maxlength="9" type="number"   placeholder="Celular" [(ngModel)]="usuario.celular" [formControl]="celularFormControl">
+                                                  <mat-hint align="end">{{celular.value?.length || 0}}/9</mat-hint>
+                                                  <mat-error *ngIf="celularFormControl.hasError('required')">
+                                                    Número de celular es <strong>necesario</strong>
+                                                  </mat-error>
+                                                </mat-form-field>
+                                          </td>
+                                          <td>
+                                              <mat-form-field class="example-full-width"  hintLabel="Max 8 caracteres">
+                                                  <input  matInput #dni maxlength="8" type="number" placeholder="DNI" [(ngModel)]="usuario.dni" [formControl]="dniFormControl">
+                                                  <mat-hint align="end">{{dni.value?.length || 0}}/8</mat-hint>
+                                                  <mat-error *ngIf="dniFormControl.hasError('required')">
+                                                  DNI es <strong>necesario</strong>
+                                                  </mat-error>
+                                                </mat-form-field>
+                                          </td>
+                                          <td>
+                                              <div  [formGroup]="passwordGroup">
+                                                  <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Password" type="password" required [(ngModel)]="usuario.clave"
+                                                    formControlName="password" >
+                                                    <mat-error *ngIf="passwordGroup.get('password').hasError('required')">
+                                                      Password es <strong>necesario</strong>
+                                                    </mat-error>                                              
+                                                  </mat-form-field>
+                                              </div>
+                                          </td>
+                                        </tr>
+                                    </table>
+                                      <table  width= "85%" cellspacing="10" cellpadding="10">
+                                          <td>
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Dirección" [(ngModel)]="usuario.direccion" [formControl]="direccionFormControl">
+                                                 <mat-error *ngIf="direccionFormControl.hasError('required')">
+                                                    Dirección es <strong>necesario</strong>
+                                                  </mat-error>
+                                                </mat-form-field>
+                                        </td>
+                                          <br>
+                                        <td >
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Email" [(ngModel)]="usuario.email"  [formControl]="emailFormControl">
+                                                <mat-error *ngIf="emailFormControl.hasError('pattern')">
+                                                 Por favor, introduce una dirección de correo electrónico válida
+                                                </mat-error>
+                                                <mat-error *ngIf="emailFormControl.hasError('required')">
+                                                  Email es <strong>necesario</strong>
+                                                </mat-error>
+                                              </mat-form-field>
+                                        </td>
+                                      </table>                                                               
+                              </form>
+                              <mat-checkbox><a (click)="openDialog()" >Terminos y Condiciones</a></mat-checkbox>
+                                   
+                              </form>
+                            </mat-step>
+                            <mat-step [stepControl]="secondFormGroup">
+                              <form [formGroup]="secondFormGroup">
+                                <ng-template matStepLabel>Paso 2: Aprobación</ng-template>
+                                <mat-form-field>
+                                  <input matInput placeholder="Address" formControlName="secondCtrl" required>
+                                </mat-form-field>
+                                <div>
+                                  <button mat-button matStepperPrevious>Back</button>
+                                  <button mat-button matStepperNext>Next</button>
+                                </div>
+                              </form>
+                            </mat-step>
+                            <mat-step>
+                              <ng-template matStepLabel>Paso 3: Desembolso y Firma</ng-template>
+                              You are now done.
+                              <div>
+                                <button mat-button matStepperPrevious>Back</button>
+                                <button mat-button (click)="stepper.reset()">Reset</button>
+                              </div>
+                            </mat-step>
+                          </mat-horizontal-stepper>
                            
-                            </mat-step>
-                            <mat-step label="Paso 2: Aprobación">
-                                <div class="container">
-                                    <form class="relative form-group" id="" name="" method="post">
-                                       <font color="blue"><h1 class="title-page">Aprobación</h1></font>
-                                    </form>
-                                </div> 
-                            </mat-step>
-                            <mat-step label="Paso 3: Desembolso y Firma">
-                                <div class="container">
-                                    <form class="relative form-group" id="" name="" method="post">
-                                       <font color="blue"><h1 class="title-page">Desembolso y Firma</h1></font>
-                                    </form>
-                                </div> 
-                              </mat-step>
-                          </mat-horizontal-stepper>                         
-                            
-                    </ol>
-                </div>
-        </div>
-       
-
-        <div>
-                               <p>
-                                 <mat-form-field appearance="outline" >
-                                     <mat-label>Nombres:</mat-label>
-                                     <input matInput placeholder="Ingrese Su Nombre" type="text" [(ngModel)]="usuario.nombre" >
-                                     <mat-hint><b>Nombres Completos</b> </mat-hint>
-                                   </mat-form-field>
-                                 </p>
-                                 <p>
-                                     <mat-form-field appearance="outline" >
-                                         <mat-label>Telefono:</mat-label>
-                                         <input matInput placeholder="Ingrese Su Número de Telefono" type="tel" [(ngModel)]="usuario.telefono">
-                                         <mat-hint><b>úmero de Telefono</b></mat-hint>
-                                       </mat-form-field>
-                                     </p>
-                                     <p>
-                                         <mat-form-field appearance="outline" >
-                                             <mat-label>Email:</mat-label>
-                                             <input matInput placeholder="Ingrese Su Email"  type="text" [(ngModel)]="usuario.email">
-                                             <mat-hint><b>Número de Telefono</b></mat-hint>
-                                           </mat-form-field>
-                                         </p>
-                                         <button mat-button (click)="openDialog()">Open dialog</button>
                                          
                                          <form name="form1" method="post" action="mipagina.htm"> 
                  
@@ -72,22 +144,15 @@
                                                  
                                                  <button class="btn btn-primary"  (click)="editarUsuario()"> MODIFICAR </button> 
                                              </p>                                       
-                                           </form>
-                           </div>
-                           <div>
-                              <p> Nombre: <input type="text" [(ngModel)]="usuario.nombre" /> </p>
-                              <p> Ap. Paterno: <input type="text" [(ngModel)]="usuario.apellido_paterno" /> </p>
-                              <p> Ap. materno: <input type="text" [(ngModel)]="usuario.apellido_materno" /> </p>
-                              <p> celular: <input type="text" [(ngModel)]="usuario.celular" /> </p>
-                              <p> DNI: <input type="text" [(ngModel)]="usuario.dni" /> </p>
-                              <p> Email: <input type="text" [(ngModel)]="usuario.email" /> </p>
-                              <p> Direccion: <input type="text" [(ngModel)]="usuario.direccion" /> </p>
-                              <p> clave: <input type="number" [(ngModel)]="usuario.clave" /> </p>
-                              <p> 
-                                <button (click)="altaUsuario()"> AGREGAR </button> 
-                                <button (click)="editarUsuario()"> MODIFICAR </button> 
-                              </p>
-                            </div>
+                                           </form>                      
+                            
+                    </ol>
+                </div>
+        </div>
+       
+                            
+                                
+                             
                           
   
                     <div align="center">
@@ -125,6 +190,7 @@
                               <p>No hay usuarios registrados.</p>
                             </ng-template>
                     </div>
-                   
+                    
+                           
 </body>
 </html>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, } from '@angular/core';
+
 ///importando operaciones 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 

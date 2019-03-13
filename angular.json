@@ -24,9 +24,14 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "../node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
+              "../node_modules/angular-bootstrap-md/scss/mdb-free.scss",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "../node_modules/chart.js/dist/Chart.js",
+               "../node_modules/hammerjs/hammer.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

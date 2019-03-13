@@ -1,4 +1,4 @@
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule,MatDatepickerModule, MatNativeDateModule} from '@angular/material';
 import { NgModule } from '@angular/core';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatStepperModule} from '@angular/material/stepper';
@@ -15,7 +15,9 @@ import {MatInputModule} from '@angular/material';
             MatStepperModule,
             MatFormFieldModule,
             MatDialogModule,
-            MatInputModule
+            MatInputModule,
+            MatDatepickerModule,
+            MatNativeDateModule
           ],
   exports: [MatButtonModule, 
             MatCheckboxModule,
@@ -23,7 +25,9 @@ import {MatInputModule} from '@angular/material';
             MatStepperModule,
             MatFormFieldModule,
             MatDialogModule,
-            MatInputModule
+            MatInputModule,
+            MatDatepickerModule,
+            MatNativeDateModule
           ],
 })
 export class MyOwnCustomMaterialModule { }
